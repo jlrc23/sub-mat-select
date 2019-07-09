@@ -1,0 +1,14 @@
+<h4>Propuesta de filtro</h4>
+<app-combo-box 
+  [formControl]="selector" 
+  [multiSelect]="true" 
+  [dataset]="dataset"
+  [bandItemSelectAll]="bandItemSelectAll"
+  [indexOfItemSelected]="indexItemSelected"
+  [styleSelect]="styleSelect"
+  [topMax]="2"
+  ></app-combo-box>
+
+  <br><br>
+  Values selecteds: <pre *ngIf="selecteds; else nothing">{{selecteds | json}}</pre>
+  <ng-template #nothing><i>Nothing selected</i></ng-template>

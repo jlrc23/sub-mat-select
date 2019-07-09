@@ -1,0 +1,16 @@
+<mat-select 
+  [formControl]="ctrlSelector" 
+  [multiple]="mtData.multiSelect"
+  [ngStyle]="styleSelect"
+  placeholder="selects">
+    <mat-option *ngIf="mtData.bandItemSelectAll" 
+      (click)="toggleSelectAll($event)"
+      [disabled]="isAllow(valueOfSelectAllItem)"
+      [value]="valueOfSelectAllItem">
+        {{labelSelect}}
+        <ng-container *ngIf="mtData.topMax">{{mtData.topMax}}</ng-container>
+      </mat-option>
+    <mat-option *ngFor="let data of mtData.dataset; let i= index;" [value]="data" [disabled]="isAllow(data)">
+      {{data.label}}
+    </mat-option>
+</mat-select>
